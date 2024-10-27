@@ -1,5 +1,5 @@
 
-# 🎟 Ticketing API
+# 🎟 Tickets-hub
 
 A study project for building a ticketing API with a focus on asynchronous processing and event-driven architecture. Built with **Node.js**, **Prisma**, and **PostgreSQL**, this API enables efficient management of events, users, and ticket sales.
 
