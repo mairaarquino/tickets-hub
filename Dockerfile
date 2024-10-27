@@ -6,4 +6,5 @@ COPY prisma ./prisma/
 RUN npm install
 COPY . .
 EXPOSE 8080
-CMD ["sh", "-c", "npx prisma migrate deploy && npm run start"]
+RUN npm install -g nodemon
+CMD ["sh", "-c", "npx prisma migrate deploy && npm run dev"]

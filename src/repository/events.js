@@ -3,19 +3,17 @@ const { convertToISO } = require('../utils/date')
 
 async function addEvent (title, desc, date, published) {
   try {
-    const create = await prisma.event.create({
+    return prisma.event.create({
       data: {
         title, desc, date: convertToISO(date), published
       }
     })
-
-    console.log(create)
   } catch (error) {
     console.log(error)
   }
 }
 
-async function getEvent () {
+async function getEvents () {
   try {
     return prisma.event.findMany()
   } catch (error) {
@@ -27,7 +25,7 @@ async function getEventById (id) {
   try {
     return prisma.event.findUnique({
       where: {
-        id
+        id: parseInt(id)
       }
     })
   } catch (error) {
@@ -36,5 +34,5 @@ async function getEventById (id) {
 }
 
 module.exports = {
-  addEvent, getEvent, getEventById
+  addEvent, getEvents, getEventById
 }

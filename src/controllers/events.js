@@ -7,13 +7,11 @@ async function addEvent (req, res, next) {
 }
 
 async function getEvents (req, res, next) {
-  const events = await eventRepository.getEvent()
+  const events = await eventRepository.getEvents()
   res.json(events)
 }
 
 async function getEventById (req, res, next) {
-  console.log(req.query, req.params)
-
   const { id } = req.params
   const event = await eventRepository.getEventById(id)
   res.json(event)
