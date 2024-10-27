@@ -9,11 +9,9 @@ async function addEvent (title, desc, date, published) {
       }
     })
 
-    console.log(create);
-    
+    console.log(create)
   } catch (error) {
-    console.log(error);
-    
+    console.log(error)
   }
 }
 
@@ -21,22 +19,19 @@ async function getEvent () {
   try {
     return prisma.event.findMany()
   } catch (error) {
-    console.log(error);
-    
+    console.log(error)
   }
 }
 
-async function getEventById(id) {
+async function getEventById (id) {
   try {
     return prisma.event.findUnique({
       where: {
         id
       }
     })
-    
   } catch (error) {
-    console.log(error);
-    
+    console.log(error)
   }
 }
 

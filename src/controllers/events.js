@@ -12,12 +12,11 @@ async function getEvents (req, res, next) {
 }
 
 async function getEventById (req, res, next) {
-  console.log(req.query, req.params);
-  
+  console.log(req.query, req.params)
+
   const { id } = req.params
   const event = await eventRepository.getEventById(id)
   res.json(event)
-
 }
 
 module.exports = {
