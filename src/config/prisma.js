@@ -9,6 +9,7 @@ const prisma = new PrismaClient({
 });
 
 module.exports = prisma
+
 // Teste de conexão
 async function testConnection() {
   try {

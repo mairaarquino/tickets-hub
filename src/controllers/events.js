@@ -1,20 +1,22 @@
 const eventRepository = require('../repository/events')
 
 async function addEvent (req, res, next) {
-  console.log('oi');
-  
   const { title, desc, date, published } = req.body
-  const response = await eventRepository.addEvent(title, desc, date, published)
-  res.json(response)
+  const event = await eventRepository.addEvent(title, desc, date, published)
+  res.json(event)
 }
 
 async function getEvents (req, res, next) {
-  const response = await eventRepository.getEvent()
-
-  res.json(response)
+  const events = await eventRepository.getEvent()
+  res.json(events)
 }
 
-function getEventById (req, res, next) {
+async function getEventById (req, res, next) {
+  console.log(req.query, req.params);
+  
+  const { id } = req.params
+  const event = await eventRepository.getEventById(id)
+  res.json(event)
 
 }
 
